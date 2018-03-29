@@ -42,8 +42,10 @@
   var network = dex.charts.d3plus.RingNetwork({
       'parent': '#D3Plus_RingNetwork',
       'type': 'rings',
-      'edges': {'arrows': true}
-    })
+      'edges': {'arrows': true},
+      'csv': csv
+    }
+  ).render();
 
     $(document).ready(function () {
       $('body').layout({
