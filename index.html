@@ -4,13 +4,18 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html ng-app>
 	<head>
-		<title>Generación de Insights para la Fundación Fulbright</title>
+		<title>Desarrollo Taller 2 Big Data</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script type="text/javascript" src="./assets/libs/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="./assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="./assets/libs/angular/angular.min.js"></script>
+		<script type="text/javascript" src="./assets/libs/angular-route/angular-route.min.js"></script>
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
@@ -25,44 +30,49 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a href="index.html" class="logo"><strong>Fulbriht</strong></a>
-									<ul class="icons">
-										<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-										<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
-									</ul>
-								</header>
+									<a href="index.html" class="logo"><strong>Taller 2 - Procesamiento escalable de fuentes semiestructuradas</strong></a>
+									<a href="index.html" class="logo"><strong> </strong></a>
+									<a href="index.html" class="logo"><strong>Anamaria I. Mojica Hanke</strong></a>
+									<a href="index.html" class="logo"><strong>Carolina Pardo Fuquen</strong></a>
+									<a href="index.html" class="logo"><strong>Omar A. Quintero Contreras</strong></a>
+									</header>
 
 							<!-- Banner -->
 								<section id="banner">
 									<div class="content">
 										<header>
-											<h1>FULBRIGHT</h1>
+											<h1>TALLER 2</h1>
 											</header>
-											<p>El Programa Fulbright, del Departamento de Estado de los Estados Unidos, está presente en 157 naciones del mundo y ha beneficiado a más de 370.000 personas elegidas con base en sus méritos académicos y profesionales, brindándoles la oportunidad de estudiar, enseñar e investigar pero, ante todo, de intercambiar ideas y contribuir a encontrar soluciones a retos e intereses de alcance global.</p>
-											<p>Su misión es promover el conocimiento intercultural, la cooperación científica e investigativa y el desarrollo a través de la formación avanzada de líderes con alto grado de compromiso social.</p>
-											<p>El objetivo de este análisis es revisar cuáles han sido las relaciones establecidas entre universidades Colombianas y de los Estados Unidos a través de los años y ver su dinamismo.</p>
+											<p>El objetivo de este taller, es logar manipular el dataset de wikipedia en Ingles otorgado dentro del cluster asignado a cada grupo. Se debe extraer información del archivo sobre obras de arte, personas y lugares.
+												De estos se debe tratar de sacar relaciones entre los mismos y generar un grafo que muestre dichas relaciones.</p>
 
 									</div>
 									<span class="image object">
-										<img src="images/Fulbriht1.jpg" alt="icon" height="42" width="42" >
+										<img src="images/bigdata.png" alt="icon" height="10" width="10" >
 									</span>
 								</section>
-
+								<section>
+									<label>Name:</label>
+      						<input type="text" ng-app="yourName" placeholder="Enter a name here">
+      						<hr>
+      						<h1>Hello {{yourName}}!</h1>
+							</section>
 							<!-- Section -->
 								<section>
 									<header class="major">
-										<h2>Resúmen</h2>
+										<h2>Punto 1: Descubrimiento de información</h2>
 
 									</header>
 									<div class="features">
 
 										<div class="content">
-											<p>Los datos suministrados por el Programa Fulbright, van desde el año 1958 hasta 2015, se presenta gran variedad de los datos, por lo cuál para propósitos del estudio y de los objetivos planteados por Fulbright se hace un filtrado y agrupaciones de los mismos cada cinco (5) años.</p>
-											<p>Adicionalmente se presenta una gran ausencia de datos, la misma es alrededor del 25% al 30%, lo cual hace un poco más complicado su manipulación.</p>
-											<p>Dentro de los datos suministrados se pueden sacar los siguientes conclusiones:</p>
+											<p>Esta se realizó mediante la inpección de la estructura de la información contenida dentro del data set de wikipedia.</p>
+											<ul>
+												<li>Se encontró que cada artículo se encuentra separa por el tag < / Page ></li>
+												<li>Se realiza un proceso para "partir" el documento por cada uno de estos page, y se encuentra que dentro del data set hay mas de 17 millones de artículos</li>
+												<li>Se extrae la información contenida dentro de los infobox mediante la expresión regular </li>
+											</ul>
+
 											<p></p>
 										</div>
 										<article>
@@ -83,12 +93,42 @@
 								</section>
 
 							<!-- Section -->
+							<!-- Section -->
 								<section>
 									<header class="major">
-										<h2>Relaciones</h2>
+										<h2>Punto 2: Consulta dinámica</h2>
+
 									</header>
-									<p>DECADA DE LOS 50 y 60</p>
-									<p>La gráfica muestra </p>
+									<div class="features">
+
+										<div class="content">
+											<p>kajkldcjakldj lajsdl kajdl jalsdj laksjd lasjdl asjdla jsdlajsdl asdjLos datos suministrados por el Programa Fulbright, van desde el año 1958 hasta 2015, se presenta gran variedad de los datos, por lo cuál para propósitos del estudio y de los objetivos planteados por Fulbright se hace un filtrado y agrupaciones de los mismos cada cinco (5) años.</p>
+
+											<p></p>
+										</div>
+										<article>
+											<span class="icon fa-diamond"></span>
+											<div class="content">
+												<h3>Insight1</h3>
+												<p>BLA BLA</p>
+											</div>
+										</article>
+										<article>
+											<span class="icon fa-paper-plane"></span>
+											<div class="content">
+												<h3>Insight2</h3>
+												<p>Bla Bla BLaS</p>
+											</div>
+										</article>
+										</div>
+								</section>
+
+							<!-- Section -->
+							<!-- Section  Gráfica-->
+								<section>
+									<header class="major">
+										<h2>Punto 3: Visualización de resultados</h2>
+									</header>
 									<iframe src="pic1.html" width="1200" height="900"></iframe>
 								</div>
 
@@ -97,8 +137,7 @@
 					</div>
 
 			</div>
-
-		<!-- Scripts -->
+			<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
@@ -106,4 +145,5 @@
 			<script src="assets/js/main.js"></script>
 
 	</body>
+
 </html>

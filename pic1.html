@@ -36,7 +36,7 @@
   </div>
 <script>
 
-  d3.csv("60decade.csv", function(error, data) {
+  d3.csv("info.csv", function(error, data) {
     var csv = new dex.csv(data).include([2,1,0]);
     // Configure a chart.
   var network = dex.charts.d3plus.RingNetwork({
