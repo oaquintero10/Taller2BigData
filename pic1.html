@@ -15,9 +15,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"/>
 <link rel="stylesheet" href="https://dexjs.net/js/dex-bootstrap.css">
 <link rel="stylesheet" href="https://dexjs.net/js/dex.css">
-
-<body>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="https://dexjs.net/js/dex-jquery.js"></script>
@@ -35,23 +32,22 @@
       <div id="DataFilterPane"></div>
   </div>
 <script>
+
   d3.csv("Info.csv", function(error, data) {
-    var csv = new dex.csv(data).include([1,2,3,4]);
+    var csv = new dex.csv(data).include([2,1,0]);
     // Configure a chart.
   var network = dex.charts.d3plus.RingNetwork({
       'parent': '#D3Plus_RingNetwork',
       'type': 'rings',
       'edges': {'arrows': true},
-      'csv': csv,
-	  'csv': csv.include([1,2,3,4])
-    }
-  ).render();
+      'csv': csv.include([2,1])
+    })
 
     $(document).ready(function () {
       $('body').layout({
         applyDemoStyles: false,
         west: {
-          size: 300
+          size: 335
         },
         onresize: function () {
           network.resize();
@@ -69,7 +65,9 @@
       network.attr("csv", msg.selected).refresh();
  });
     });
-  })
+  });
 </script>
 </body>
+
+
 </html>
