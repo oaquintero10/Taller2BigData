@@ -34,13 +34,13 @@
 <script>
 
   d3.csv("Info.csv", function(error, data) {
-    var csv = new dex.csv(data).include([2,1,0]);
+    var csv = new dex.csv(data).include([1,2,3,4]);
     // Configure a chart.
   var network = dex.charts.d3plus.RingNetwork({
       'parent': '#D3Plus_RingNetwork',
       'type': 'rings',
       'edges': {'arrows': true},
-      'csv': csv.include([2,1])
+      'csv': csv.include([1,2,3,4])
     })
 
     $(document).ready(function () {
