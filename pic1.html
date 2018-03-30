@@ -15,6 +15,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"/>
 <link rel="stylesheet" href="https://dexjs.net/js/dex-bootstrap.css">
 <link rel="stylesheet" href="https://dexjs.net/js/dex.css">
+
+<body>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="https://dexjs.net/js/dex-jquery.js"></script>
@@ -33,26 +36,28 @@
   </div>
 <script>
 
-  d3.csv("Info.csv", function(error, data) {
-    var csv = new dex.csv(data);
+  d3.csv("info.csv", function(error, data) {
+    var csv = new dex.csv(data).include([2,1,0]);
     // Configure a chart.
   var network = dex.charts.d3plus.RingNetwork({
       'parent': '#D3Plus_RingNetwork',
       'type': 'rings',
       'edges': {'arrows': true},
-      'csv': csv.include([0,1,2,3])
+      'csv': csv.include([1,2,3,4])
     })
 
     $(document).ready(function () {
       $('body').layout({
         applyDemoStyles: false,
         west: {
-          size: 250
+          size: 335
         },
         onresize: function () {
           network.resize();
         }
       });
+
+      network.render();
 
       var dataFilterPane = dex.ui.DataFilterPane({
         "parent": "#DataFilterPane",
@@ -66,6 +71,4 @@
   });
 </script>
 </body>
-
-
 </html>
