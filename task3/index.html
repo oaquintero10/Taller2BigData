@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<head>
+  <title>Relaciones entre universidades</title>
+  <style>
+      html, iframe, #panel{
+          height: 900px;
+          min-height: 100%;
+          width: 100%;
+          min-width: 100%;
+      }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css">
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <select id="decada" class="form-control">
+    <option selected value="Asterix.html">Asterix-Autor</option>
+    <option value="asterixobras.html">Asterix-Obras</option>
+    <option selected value="trovatore-Autor.html">Il trovatore-Autor</option>
+    <option value="trovatore-Obras.html">Il trovatore-Obras</option>
+    <option selected value="Batman-Autor.html">Batman-Autor</option>
+    <option value="Batman-Obras.html">Batman-Obras</option>
+    <option selected value="Fantasy-Autor.html">Final Fantasy-Autor</option>
+    <option value="Fantasy-Obras.html">Final Fantasy-Obras</option>
+    <option selected value="Kalevala-Autor.html">The Kalevala-Autor</option>
+    <option value="Kalevala-Obras.html">The Kalevala-Obras</option>
+    <option selected value="Stone-Autor.html">Rosetta Stone-Autor</option>
+    <option value="Stone-Obras.html">Rosetta Stone-Obras</option>
+    <option selected value="Atlantis-Autor.html">Hearts in Atlantis-Autor</option>
+    <option value="Atlantis-Obras.html">Hearts in Atlantis-Obras</option>
+    <option selected value="Manneken-Autor.html">Manneken Pis-Autor</option>
+    <option value="Manneken-Obras.html">Manneken Pis-Obras</option>
+    <option selected value="Persistence-Autor.html">The Persistence of Memory-Autor</option>
+    <option value="Persistence-Obras.html">The Persistence of Memory-Obras</option>
+    <option selected value="Mosaic-Autor.html">Alexander Mosaic-Autor</option>
+    <option value="Mosaic-Obras.html">Alexander Mosaic-Obras</option>
+    </select>
+  <div id="panel">
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script>
+    $('#decada').selectmenu({
+      change: function(event, data){
+        var decade = data.item.value;
+        draw(decade);
+      }
+    });
+    function draw(decade){
+      var iframe = '<iframe src="' + decade + '"frameBorder="0"></iframe>';
+      $('#panel').empty().html(iframe);
+    }
+    draw('Asterix.html');
+  </script>
+</body>
+</html>

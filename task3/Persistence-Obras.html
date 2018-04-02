@@ -35,15 +35,15 @@
       <div id="DataFilterPane"></div>
   </div>
 <script>
-  var juego = "data/Info.csv"
-  d3.csv(juego, function(error, data) {
-    var csv = new dex.csv(data).include([0, 1, 2,3]);
+
+  d3.csv("data/trovatore-Obras.csv", function(error, data) {
+    var csv = new dex.csv(data).include([0, 1, 2 , 3]);
     // Configure a chart.
   var network = dex.charts.d3plus.RingNetwork({
       'parent': '#D3Plus_RingNetwork',
       'type': 'rings',
       'edges': {'arrows': true},
-      'csv': csv.include([0, 1,2,3])
+      'csv': csv.include([0, 1, 2 , 3])
     })
 
     $(document).ready(function () {
