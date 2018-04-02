@@ -41,8 +41,7 @@
 										<header>
 											<h1>TALLER 2</h1>
 											</header>
-											<p>El objetivo de este taller, es logar manipular el dataset de wikipedia en Ingles otorgado dentro del cluster asignado a cada grupo. Se debe extraer información del archivo sobre obras de arte, personas y lugares.
-												De estos se debe tratar de sacar relaciones entre los mismos y generar un grafo que muestre dichas relaciones.</p>
+											<p>En este documento se presenta un reporte técnico sobre la elaboración del taller 2. El cual busca la implementación de un procesamiento escalable de fuentes semiestructuradas. En este caso se trabaja sobre un “dump” de wikipedia. En el cual, se tiene como objetivo  conocer la información relacionada de los diferentes movimientos artísticos, a lo largo de la historia, recreando un grafo con sus relaciones de manera dinámica.</p>
 
 									</div>
 									<span class="image object">
@@ -53,72 +52,44 @@
 							<!-- Section -->
 								<section>
 									<header class="major">
-										<h2>Punto 1: Descubrimiento de información</h2>
+										<h2>Descubrimiento de Información</h2>
 
 									</header>
 									<div class="features">
 
 										<div class="content">
-											<p>Esta se realiz� mediante la inpección de la estructura de la información contenida dentro del data set de wikipedia.</p>
+											<p>Esta se realizó mediante la inpección de la estructura de la información contenida dentro del data set de wikipedia.</p>
 											<ul>
-												<li>Se encontr� que cada artículo en su estructura se separa por el tag < / Page ></li>
+												<li>Se encontró que cada artículo en su estructura se separa por el tag < / Page ></li>
 												<li>Se realiza un proceso para "partir" el documento por cada uno de estos page, y se hace un conteo de los articulos dentro del data set, encontrando mas de 17 millones.</li>
 												<li>Se extrae la información contenida dentro de los infobox mediante expresiones regulares </li>
-												<li>Este proceso de hace acorde a varios Infobox encontrados dentro de los temas interesantes de estudio. Arte, lugares y personas. </li>
+												<li>Hay muchos tipos de infobox, no necesariamente con la misma información, una guía para saber los diferentes tipos fue:  https://en.wikipedia.org/wiki/Wikipedia:List_of_infoboxes</li>
+												<li>El “dump” se encuentra en formato xml, y comprimido (bzip)</li>
 											</ul>
 
-											<p></p>
 										</div>
 										<article>
 											<span class="icon fa-diamond"></span>
 											<div class="content">
 												<h3>Insight1</h3>
-												<p>BLA BLA</p>
+												<p>La información de las personas no se filtra por el tipo de infobox, ya que si se decide tomar solo algunos tipos, se está omitiendo una gran cantidad de información. Por lo cual, se procede a escoger aquellas páginas que tienen birth_date, birth_place, death_place o death_date (caracteristicas comunes en personas)</p>
 											</div>
 										</article>
 										<article>
 											<span class="icon fa-paper-plane"></span>
 											<div class="content">
 												<h3>Insight2</h3>
-												<p>Bla Bla BLaS</p>
+												<p>La información relacionada con los diferentes movimientos artísticos si se fitra por los diferentes tipos de Infobox (book series, book, artwork,single, opera, song, film, movie,comics,play, monument, artifact, ancient site)</p>
 											</div>
 										</article>
 										</div>
-								</section>
-
-							<!-- Section -->
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Punto 2: Consulta dinámica</h2>
-
-									</header>
-									<div class="features">
-
-
-
-										<article>
-											<span class="icon fa-diamond"></span>
-											<div class="content">
-												<h3>Insight1</h3>
-												<p>BLA BLA</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon fa-paper-plane"></span>
-											<div class="content">
-												<h3>Insight2</h3>
-												<p>Bla Bla BLaS</p>
-											</div>
-										</article>
-									</div>
 								</section>
 
 							<!-- Section -->
 							<!-- Section  Gráfica-->
 								<section>
 									<header class="major">
-										<h2>Punto 3: Visualización de resultados</h2>
+										<h2>Visualización de resultados</h2>
 									</header>
 									<iframe src="task3/index.html" width="1200" height="900"></iframe>
 								</div>
